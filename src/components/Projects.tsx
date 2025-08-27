@@ -223,17 +223,9 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-gray-900 hover:bg-gray-800 text-white text-center py-2 px-4 rounded-lg transition-colors duration-300"
+                    className="w-full bg-gray-900 hover:bg-gray-800 text-white text-center py-2 px-4 rounded-lg transition-colors duration-300"
                   >
                     GitHub
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors duration-300"
-                  >
-                    Live Demo
                   </a>
                 </div>
               </div>
