@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import ProjectPlaceholder from './ProjectPlaceholder'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -10,74 +11,62 @@ const Projects = () => {
       id: 1,
       title: 'Portfolio Website',
       description: 'Modern, responsive portfolio built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, interactive components, and professional design.',
-      image: '/api/placeholder/400/250',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
       category: 'frontend',
       github: 'https://github.com/kmkryz/Portfolio',
-      demo: '#',
       featured: true,
       collaborative: false,
-      contribution: 'Full-stack development, responsive design, component architecture'
+      placeholderType: 'portfolio' as const
     },
     {
       id: 2,
       title: 'WDD330 Web Development',
       description: 'Comprehensive web development course projects covering modern JavaScript, DOM manipulation, and interactive web applications.',
-      image: '/api/placeholder/400/250',
       technologies: ['JavaScript', 'HTML', 'CSS', 'Web APIs'],
       category: 'frontend',
       github: 'https://github.com/kmkryz/wdd330',
-      demo: '#',
       collaborative: false,
-      contribution: 'JavaScript development, DOM manipulation, web APIs integration'
+      placeholderType: 'web-dev' as const
     },
     {
       id: 3,
       title: 'Starter Repository',
       description: 'Template and starter code repository for various development projects, showcasing best practices and project structure.',
-      image: '/api/placeholder/400/250',
       technologies: ['JavaScript', 'Git', 'Project Templates'],
       category: 'tools',
       github: 'https://github.com/kmkryz/starter-repo',
-      demo: '#',
       collaborative: false,
-      contribution: 'Project structure, best practices, template development'
+      placeholderType: 'starter' as const
     },
     {
       id: 4,
       title: 'AI-Powered Application',
       description: 'Internship project at Travelogue involving AI generation testing, data analysis, and Python machine learning libraries.',
-      image: '/api/placeholder/400/250',
       technologies: ['Python', 'Machine Learning', 'AI Libraries', 'Data Analysis'],
       category: 'backend',
       github: '#',
-      demo: '#',
       collaborative: false,
-      contribution: 'AI integration, data analysis, Python development'
+      placeholderType: 'ai' as const
     },
     {
       id: 5,
       title: 'Database Management System',
       description: 'Course project demonstrating database concepts, SQL queries, and data management using MySQL and pgAdmin 4.',
-      image: '/api/placeholder/400/250',
       technologies: ['MySQL', 'SQL', 'pgAdmin 4', 'Database Design'],
       category: 'backend',
       github: '#',
-      demo: '#',
       collaborative: false,
-      contribution: 'Database design, SQL queries, data modeling'
+      placeholderType: 'database' as const
     },
     {
       id: 6,
       title: 'React Component Library',
       description: 'Collection of reusable React components built with TypeScript, featuring modern design patterns and accessibility features.',
-      image: '/api/placeholder/400/250',
       technologies: ['React', 'TypeScript', 'Component Design', 'Accessibility'],
       category: 'frontend',
       github: '#',
-      demo: '#',
       collaborative: false,
-      contribution: 'Component design, TypeScript implementation, accessibility features'
+      placeholderType: 'react' as const
     }
   ]
 
@@ -86,40 +75,34 @@ const Projects = () => {
       id: 7,
       title: 'ResuMatch - AI-Powered Resume Matching',
       description: 'Collaborative full-stack web application that helps job seekers match their resumes to job descriptions using OpenAI integration. Features user authentication, resume storage in S3, and AI-powered resume analysis.',
-      image: '/api/placeholder/400/250',
       technologies: ['Node.js', 'Vanilla JavaScript', 'CSS', 'OpenAI API', 'BCRYPT JWT', 'MongoDB', 'Mongoose', 'S3 Bucket'],
       category: 'fullstack',
       github: 'https://github.com/Sadly4343/ResuMatch',
-      demo: 'https://resu-match-btzk.vercel.app/',
       collaborative: true,
       featured: false,
-      contribution: 'Full-stack development, AI integration, database design, user authentication system'
+      placeholderType: 'resumatch' as const
     },
     {
       id: 8,
       title: 'Handcrafted Haven - E-commerce Platform',
       description: 'Group project for Web Application Development course at BYU-Idaho. Built a complete e-commerce platform for handcrafted products with team collaboration and modern web technologies.',
-      image: '/api/placeholder/400/250',
       technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Team Collaboration', 'Git Workflow', 'Responsive Design'],
       category: 'fullstack',
       github: 'https://github.com/dvardcr/wdd430-t08-handcrafted-haven',
-      demo: 'https://wdd430-t08-handcrafted-haven-sable.vercel.app/',
       collaborative: true,
       featured: true,
-      contribution: 'Frontend development, TypeScript implementation, responsive design, team coordination'
+      placeholderType: 'ecommerce' as const
     },
     {
       id: 9,
       title: 'CSE341 Final Project',
       description: 'Collaborative project for CSE341 course demonstrating full-stack development skills with modern web technologies and team collaboration.',
-      image: '/api/placeholder/400/250',
       technologies: ['Full Stack', 'Web Development', 'Team Collaboration', 'Modern Technologies'],
       category: 'fullstack',
       github: 'https://github.com/joy935/cse341-fproject',
-      demo: '#',
       collaborative: true,
       featured: false,
-      contribution: 'Full-stack development, database design, API integration, team collaboration'
+      placeholderType: 'fullstack' as const
     }
   ]
 
@@ -175,11 +158,11 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div key={project.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               {/* Project Image */}
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center relative">
-                <div className="text-center text-gray-500">
-                  <div className="text-4xl mb-2">🚀</div>
-                  <div className="text-sm">Project Preview</div>
-                </div>
+              <div className="h-48 relative overflow-hidden">
+                <ProjectPlaceholder 
+                  projectType={project.placeholderType} 
+                  title={project.title}
+                />
                 {project.collaborative && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
                     Collaborative
@@ -196,14 +179,6 @@ const Projects = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-
-                {/* Contribution Info for Collaborative Projects */}
-                {project.collaborative && project.contribution && (
-                  <div className="mb-4 p-3 bg-green-50 rounded-lg border border-green-200">
-                    <p className="text-sm text-green-800 font-medium mb-1">My Contributions:</p>
-                    <p className="text-sm text-green-700">{project.contribution}</p>
-                  </div>
-                )}
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
