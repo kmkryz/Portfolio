@@ -14,7 +14,7 @@ const About = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-600 leading-relaxed">
-              I&apos;m a passionate Computer Programming student at Brigham Young University, maintaining a 3.97 GPA while pursuing my B.S. in Computer Programming. My journey in technology began with a Web & Computer Programming Certificate from the University of Maryland Global Campus.
+              I&apos;m a passionate Computer Programming graduate from Brigham Young University, having completed my B.S. in Computer Programming with a 3.97 GPA. My journey in technology began with a Web & Computer Programming Certificate from the University of Maryland Global Campus.
             </p>
             
             <p className="text-lg text-gray-600 leading-relaxed">

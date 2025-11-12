@@ -194,7 +194,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900">Education</h4>
                   <p className="text-gray-600">Brigham Young University</p>
-                  <p className="text-gray-600">B.S. Computer Programming (Expected Oct. 2025)</p>
+                  <p className="text-gray-600">B.S. Computer Programming (Graduated)</p>
                   <p className="text-gray-600">GPA: 3.97</p>
                 </div>
               </div>

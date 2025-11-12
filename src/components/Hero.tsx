@@ -45,12 +45,12 @@ const Hero = () => {
 
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 mb-8">
-            Computer Programming Student & Developer
+            Computer Programming Graduate & Developer
           </h2>
 
           {/* Description */}
           <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Passionate Computer Programming student at Brigham Young University with a 3.97 GPA. 
+            Passionate Computer Programming graduate from Brigham Young University with a 3.97 GPA. 
             Experienced in React, Next.js, TypeScript, Python, and AI development. 
             Creating innovative solutions through clean code and modern technologies.
           </p>
